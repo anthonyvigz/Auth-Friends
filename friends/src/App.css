@@ -32,8 +32,19 @@
   }
 }
 
-.login {
+form {
   display: flex;
   flex-direction: column;
-  color: red;
+  align-items: center;
+  margin-top: 200px;
+}
+
+input {
+  padding: 15px 30px;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 15px 20px;
+  font-size: 1.5em;
 }
