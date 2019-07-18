@@ -1,3 +1,10 @@
+import {
+    LOGIN_START,
+    LOGIN_SUCCESS,
+    LOGIN_FAILED
+} from '../actions/actions'
+
+
 const initialState = {
     friends: [],
     isLoading: false,
