@@ -10,7 +10,7 @@ export function login(username, password) {
     return (dispatch) => {
         dispatch({ type: LOGIN_START })
 
-        return axios.post('http://localhost:5000/', { username, password })
+        return axios.post('http://localhost:5000/api/login', { username, password })
             .then((response) => {
                 localStorage.setItem('token', response.data.token)
                 dispatch({ type: LOGIN_SUCCESS })
