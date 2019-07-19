@@ -1,7 +1,7 @@
 import React from 'react'
-import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { login } from '../actions/actions'
+import axios from 'axios';
+import { getAccount } from '../actions/actions'
 
 class FriendsList extends React.Component {
     constructor() {
@@ -11,11 +11,31 @@ class FriendsList extends React.Component {
         }
     }
 
+    componentDidMount() {
+        this.props.getAccount()
+    }
+
     render() {
         return (
             <h1>hey</h1>
-        )
+            )
+        }
+}
+
+
+const mapStateToProps = (state) => {
+	return {
+        friends: state.friends
     }
 }
 
-export default FriendsList;
+const mapDispatchToProps = {
+	getAccount: getAccount
+}
+
+export default(
+	connect(
+		mapStateToProps,
+		mapDispatchToProps,
+	)(FriendsList)
+)
